@@ -5546,3 +5546,54 @@ getAllBooks endpoint
 2025-06-25 09:00:04 INFO  [HttpLogger] - REQUEST  [POST] /book/controller/addBook
 2025-06-25 09:00:04 INFO  [com.example.storedemo.controller.BookController] - this is logger in /getAllBooks endpoint
 2025-06-25 09:00:04 INFO  [HttpLogger] - RESPONSE [POST] /book/controller/addBook => 201
+2025-06-25 13:07:52 INFO  [com.example.storedemo.StoreDemoApplication] - Starting StoreDemoApplication using Java 17.0.12 with PID 72080 (/Users/elcanmammadov/Documents/WorkSpace/privateProjects/store-demoWorks/build/classes/java/main started by elcanmammadov in /Users/elcanmammadov/Documents/WorkSpace/privateProjects/store-demoWorks)
+2025-06-25 13:07:52 INFO  [com.example.storedemo.StoreDemoApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-25 13:07:52 INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-25 13:07:52 INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-06-25 13:07:53 INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port 8086 (http)
+2025-06-25 13:07:53 INFO  [org.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8086"]
+2025-06-25 13:07:53 INFO  [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2025-06-25 13:07:53 INFO  [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-25 13:07:53 INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2025-06-25 13:07:53 INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1132 ms
+2025-06-25 13:07:53 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-25 13:07:53 INFO  [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-25 13:07:53 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-06-25 13:07:53 INFO  [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-25 13:07:54 INFO  [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2025-06-25 13:07:54 INFO  [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45d38165
+2025-06-25 13:07:54 INFO  [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2025-06-25 13:07:54 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-25 13:07:55 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-25 13:07:55 INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-25 13:07:55 WARN  [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-25 13:07:55 INFO  [org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean] - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-25 13:07:56 INFO  [org.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8086"]
+2025-06-25 13:07:56 WARN  [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-06-25 13:07:56 INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-25 13:07:56 INFO  [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2025-06-25 13:07:56 INFO  [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2025-06-25 13:07:56 INFO  [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-25 13:07:56 ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8086 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8086 or configure this application to listen on another port.
+
