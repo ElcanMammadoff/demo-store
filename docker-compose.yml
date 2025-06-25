@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: store-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: storedb
+      MYSQL_ROOT_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ~/opt_logs:/opt/logs
+    networks:
+      - store-network
+
+  store-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: store-demo-app
+    depends_on:
+      - mysql
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL_FOR_COMPOSE}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_APPLICATION_NAME: store-demo
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+    volumes:
+      - ./logs:/logs
+    networks:
+      - store-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: store-phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: admin123
+    depends_on:
+      - mysql
+    networks:
+      - store-network
+
+volumes:
+  mysql_data:
+
+networks:
+  store-network:

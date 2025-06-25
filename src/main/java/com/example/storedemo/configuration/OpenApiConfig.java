@@ -16,4 +16,3 @@ public class OpenApiConfig {
                         .description("API documentation for the Book Store project"));
     }
 }
-
